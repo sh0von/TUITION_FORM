@@ -3,26 +3,22 @@
 @tailwind utilities;
 html {
   margin:20px;
-  --s: 150px; /* control the size */
-  
-  background:
-    linear-gradient(135deg, #0000 18.75%, #FFC700 0 31.25%, #0000 0),
-    repeating-linear-gradient(45deg, #FFC700 -6.25% 6.25%, #222 0 18.75%);
-  background-size: var(--s) var(--s); 
-  background-position: 0 0; /* initial position */
-
-  /* Animation */
-  animation: animateBackground 5s linear infinite;
-}
-
-@keyframes animateBackground {
-  0% {
-    background-position: 0 0; /* start position */
-  }
-  100% {
-    background-position: var(--s) var(--s); /* end position */
-  }
 }
 .bg-yellow-400{
   background-color: #FFC700!important;
+}
+html {
+  --s: 50px;
+  --c: #191b22;
+  --_s: calc(2*var(--s)) calc(2*var(--s));
+  --_g: 35.36% 35.36% at;
+  --_c: #0000 66%,#abc 68% 70%,#0000 72%;
+  background: 
+    radial-gradient(var(--_g) 100% 25%,var(--_c)) var(--s) var(--s)/var(--_s), 
+    radial-gradient(var(--_g) 0 75%,var(--_c)) var(--s) var(--s)/var(--_s), 
+    radial-gradient(var(--_g) 100% 25%,var(--_c)) 0 0/var(--_s), 
+    radial-gradient(var(--_g) 0 75%,var(--_c)) 0 0/var(--_s), 
+    repeating-conic-gradient(var(--c) 0 25%,#0000 0 50%) 0 0/var(--_s), 
+    radial-gradient(var(--_c)) 0 calc(var(--s)/2)/var(--s) var(--s) var(--c);
+  background-attachment: fixed;
 }
