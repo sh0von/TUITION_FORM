@@ -74,7 +74,7 @@ export default function Step1({ formData, handleChange, handleNext, errors }) {
 
   return (
     <div className="max-w-lg mx-auto">
-      <h2 className="text-3xl font-bold mb-6 text-gray-700">Teacher Details</h2>
+      <h2 className="text-3xl font-bold mb-6 text-gray-700">Your Details (Teacher) </h2>
       
       {/* Name Input */}
       <TextInput id="name" label="Name" value={formData.name} onChange={handleChange} placeholder="Enter your name" error={errors.name} />

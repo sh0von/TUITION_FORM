@@ -5,7 +5,7 @@ import NavigationButtons from '../NavigationButtons';
 export default function Step2({ formData, handleChange, handleNext, handleBack, errors }) {
   return (
     <div className="max-w-lg mx-auto">
-      <h2 className="text-3xl font-bold mb-6 text-gray-700">Job Details</h2>
+      <h2 className="text-3xl font-bold mb-6 text-gray-700">Tuition Details (student) </h2>
       
       {/* Class Selection */}
       <SelectInput
