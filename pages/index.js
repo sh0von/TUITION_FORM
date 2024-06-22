@@ -4,6 +4,7 @@ import Step1 from '../components/FormSteps/Step1';
 import Step2 from '../components/FormSteps/Step2';
 import Step3 from '../components/FormSteps/Step3';
 import Success from '../components/FormSteps/Success';
+import Modal from '../components/Modal';  // Import the Modal component
 
 export default function Home() {
   const [step, setStep] = useState(1);
@@ -27,6 +28,7 @@ export default function Home() {
   const [termsAccepted, setTermsAccepted] = useState(false);
   const [errors, setErrors] = useState({});
   const [loading, setLoading] = useState(false);
+  const [showModal, setShowModal] = useState(true);  // State to control the modal visibility
 
   useEffect(() => {
     const savedTeacherDetails = localStorage.getItem('teacherDetails');
@@ -137,9 +139,14 @@ export default function Home() {
     setStep(1);
   };
 
+  const handleCloseModal = () => {
+    setShowModal(false);
+  };
+
   return (
     <div className="min-h-screen flex items-center justify-center">
       <div className="w-full max-w-lg bg-white p-8 rounded-xl shadow-lg">
+        <Modal showModal={showModal} handleClose={handleCloseModal} />  {/* Include Modal here */}
         <div className="mb-8 flex justify-between items-center">
           <div className={`w-12 h-12 ${step >= 1 ? 'bg-yellow-400' : 'bg-gray-200'} rounded-full flex items-center justify-center text-white font-bold`} id="indicator1">1</div>
           <div className="flex-1 h-1 bg-gray-200 mx-2 relative">
