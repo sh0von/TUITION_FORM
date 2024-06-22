@@ -5,8 +5,8 @@ import NavigationButtons from '../NavigationButtons';
 export default function Step2({ formData, handleChange, handleNext, handleBack, errors }) {
   return (
     <div className="max-w-lg mx-auto">
-      <h2 className="text-3xl font-bold mb-6 text-gray-700">Tuition Details (student) </h2>
-      
+      <h2 className="text-3xl font-bold mb-6 text-gray-700">Tuition Details (Student) </h2>
+
       {/* Class Selection */}
       <SelectInput
         id="class"
@@ -20,13 +20,13 @@ export default function Step2({ formData, handleChange, handleNext, handleBack, 
       {/* Area Input */}
       <TextInput
         id="area"
-        label="Area (e.g., ChawkBazar, 2 No Gate)"
+        label="Area"
         value={formData.area}
         onChange={handleChange}
-        placeholder="Enter the area"
+        placeholder="Enter the area (e.g., ChawkBazar, 2 No Gate)"
         error={errors.area}
       />
-      
+
       {/* Number of Subjects Selection */}
       <SelectInput
         id="no_of_subjects"
@@ -40,17 +40,17 @@ export default function Step2({ formData, handleChange, handleNext, handleBack, 
       {/* Medium Selection */}
       <SelectInput
         id="medium"
-        label="Medium"
+        label="Medium of Instruction"
         value={formData.medium}
         onChange={handleChange}
         options={['Bangla', 'English', 'National Curriculum', 'British Curriculum']}
         error={errors.medium}
       />
-      
+
       {/* Group Selection */}
       <SelectInput
         id="group"
-        label="Group"
+        label="Academic Group"
         value={formData.group}
         onChange={handleChange}
         options={['Science', 'Commerce', 'Arts']}
@@ -70,15 +70,18 @@ export default function Step2({ formData, handleChange, handleNext, handleBack, 
       {/* Salary Input */}
       <TextInput
         id="salary"
-        label="Salary"
+        label="Expected Salary"
         value={formData.salary}
         onChange={handleChange}
-        placeholder="Enter the salary"
+        placeholder="Enter the expected salary"
         error={errors.salary}
       />
-      
+
       {/* Navigation Buttons */}
-        <NavigationButtons onBack={handleBack} onNext={handleNext} />
+      <div className="flex justify-between mt-6">
+        <button className="bg-gray-200 text-gray-700 px-6 py-3 rounded-lg" onClick={handleBack}>Back</button>
+        <button className="bg-yellow-400 text-white px-6 py-3 rounded-lg" onClick={handleNext}>Next</button>
+      </div>
     </div>
   );
 }

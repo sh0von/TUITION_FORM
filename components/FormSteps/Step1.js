@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import TextInput from '../FormFields/TextInput';
 import SelectInput from '../FormFields/SelectInput';
-import NavigationButtons from '../NavigationButtons';
 import universities from '../../uni.json';
 import subjects from '../../sub.json';
 import Autosuggest from 'react-autosuggest';
@@ -74,16 +73,47 @@ export default function Step1({ formData, handleChange, handleNext, errors }) {
 
   return (
     <div className="max-w-lg mx-auto">
-      <h2 className="text-3xl font-bold mb-6 text-gray-700">Your Details (Teacher) </h2>
+      <h2 className="text-3xl font-bold mb-6 text-gray-700">Your Details (Teacher)</h2>
       
       {/* Name Input */}
-      <TextInput id="name" label="Name" value={formData.name} onChange={handleChange} placeholder="Enter your name" error={errors.name} />
-      
+      <TextInput 
+        id="name" 
+        label="Full Name" 
+        value={formData.name} 
+        onChange={handleChange} 
+        placeholder="Enter your full name" 
+        error={errors.name} 
+      />
+
       {/* Gender Selection */}
-      <SelectInput id="gender" label="Gender" value={formData.gender} onChange={handleChange} options={['Male', 'Female']} error={errors.gender} />
-      
+      <SelectInput 
+        id="gender" 
+        label="Gender" 
+        value={formData.gender} 
+        onChange={handleChange} 
+        options={['Male', 'Female']} 
+        error={errors.gender} 
+      />
+
       {/* Division Selection */}
-      <SelectInput id="division" label="Division" value={formData.division} onChange={handleChange} options={['Dhaka', 'Chittagong', 'Rajshahi', 'Khulna', 'Barisal', 'Sylhet', 'Rangpur', 'Mymensingh']} error={errors.division} />
+      <SelectInput 
+        id="division" 
+        label="Division" 
+        value={formData.division} 
+        onChange={handleChange} 
+        options={['Dhaka', 'Chittagong', 'Rajshahi', 'Khulna', 'Barisal', 'Sylhet', 'Rangpur', 'Mymensingh']} 
+        error={errors.division} 
+      />
+
+      {/* University Type Selection */}
+      <SelectInput 
+        id="university_type" 
+        label="University Type" 
+        value={formData.university_type} 
+        onChange={handleChange} 
+        options={['Public', 'Private', 'National University']} 
+        error={errors.university_type} 
+      />
       
       {/* University Name Autosuggest */}
       <div className="mb-4">
@@ -100,7 +130,7 @@ export default function Step1({ formData, handleChange, handleNext, errors }) {
           inputProps={universityInputProps}
           theme={{
             container: 'relative',
-            suggestionsContainer: 'absolute z-10 w-full bg-white  rounded-lg',
+            suggestionsContainer: 'absolute z-10 w-full bg-white rounded-lg',
             suggestionsList: 'list-none p-0 m-0',
             suggestion: 'p-2',
             suggestionHighlighted: 'bg-yellow-400 text-white'
@@ -124,7 +154,7 @@ export default function Step1({ formData, handleChange, handleNext, errors }) {
           inputProps={departmentInputProps}
           theme={{
             container: 'relative',
-            suggestionsContainer: 'absolute z-10 w-full bg-white  rounded-lg',
+            suggestionsContainer: 'absolute z-10 w-full bg-white rounded-lg',
             suggestionsList: 'list-none p-0 m-0',
             suggestion: 'p-2',
             suggestionHighlighted: 'bg-yellow-400 text-white'
@@ -133,12 +163,17 @@ export default function Step1({ formData, handleChange, handleNext, errors }) {
         {errors.department && <p className="text-red-500 text-xs mt-1">{errors.department}</p>}
       </div>
 
-      {/* University Type Selection */}
-      <SelectInput id="university_type" label="University Type" value={formData.university_type} onChange={handleChange} options={['Public', 'Private', 'National University']} error={errors.university_type} />
-      
       {/* Degree Type Selection */}
-      <SelectInput id="degree_type" label="Degree Type" value={formData.degree_type} onChange={handleChange} options={['Hons.', 'Degree', 'Engineering', 'MBBS']} error={errors.degree_type} />
-      
+      <SelectInput 
+        id="degree_type" 
+        label="Degree Type" 
+        value={formData.degree_type} 
+        onChange={handleChange}         
+        options={['Honours', 'Engineering',  'Degree','MBBS']}
+ 
+        error={errors.degree_type} 
+      />
+
       {/* Next Button */}
       <div className="flex justify-end">
         <button className="bg-yellow-400 text-white px-6 py-3 rounded-lg" onClick={handleNext}>Next</button>
