@@ -20,7 +20,7 @@ const Modal = ({ showModal, handleClose }) => {
   if (!showModal && !isFadingOut) return null;
 
   return (
-    <div className={`fixed inset-0 z-50 bg-gray-600 bg-opacity-75 flex items-center justify-center transition-opacity duration-300 ${isFadingOut ? 'animate-fadeOut' : 'animate-fadeIn'}`}>
+    <div className={`fixed inset-0 z-50 px-4 bg-gray-600 bg-opacity-75 flex items-center justify-center transition-opacity duration-300 ${isFadingOut ? 'animate-fadeOut' : 'animate-fadeIn'}`}>
       <div className={`bg-white p-8 rounded-lg shadow-lg max-w-md mx-auto transform transition-transform duration-300 ${isFadingOut ? 'animate-fadeOut' : 'animate-fadeIn'}`}>
         <h2 className="text-3xl font-bold mb-6 text-center text-gray-800">Welcome!</h2>
         <p className="text-lg text-gray-600 mb-6">
