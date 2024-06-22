@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
 import axios from 'axios';
 import Step1 from '../components/FormSteps/Step1';
 import Step2 from '../components/FormSteps/Step2';
@@ -7,6 +8,7 @@ import Success from '../components/FormSteps/Success';
 import Modal from '../components/Modal';  // Import the Modal component
 
 export default function Home() {
+  const router = useRouter();
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState({
     name: '',
@@ -39,6 +41,11 @@ export default function Home() {
       }));
     }
   }, []);
+
+  useEffect(() => {
+    // Update the URL parameter when the step changes
+    router.push(`/?step=${step}`, undefined, { shallow: true });
+  }, [step]);
 
   const handleNext = async () => {
     const newErrors = {};
