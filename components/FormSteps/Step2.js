@@ -70,10 +70,10 @@ export default function Step2({ formData, handleChange, handleNext, handleBack, 
       {/* Salary Input */}
       <TextInput
         id="salary"
-        label="Expected Salary"
+        label="Salary"
         value={formData.salary}
         onChange={handleChange}
-        placeholder="Enter the expected salary"
+        placeholder="Enter the salary"
         error={errors.salary}
       />
 
