@@ -34,7 +34,7 @@ const Modal = ({ showModal, handleClose }) => {
       <li><span className="font-bold">Anonymous:</span>You can use a fake name to remain anonymous.</li>
     </ul>
     <p className="text-lg text-gray-600">
-      All information is used for a tuition prediction research project.
+      All information is used for a tuition salary prediction research project.
     </p>
 
 
