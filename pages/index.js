@@ -180,8 +180,7 @@ export default function Home() {
           />
         )}
         {step === 4 && <Success handleStartOver={handleStartOver} />}
-      </div><script type='text/javascript' src='https://cdn.jsdelivr.net/npm/countly-sdk-web@latest/lib/countly.min.js'></script>
-
+      </div>
     </div>
   );
 }
