@@ -1,36 +1,28 @@
 import { useEffect } from 'react';
-import { Analytics } from '@vercel/analytics/react';
-import '@/styles/globals.css';
-import { Countly } from 'countly-sdk-web';
+import '@/styles/globals.css'; // Import your global styles here
+import Countly from 'countly-sdk-web'; // Assuming countly-sdk-web is installed via npm/yarn
 
-function MyApp({ Component, pageProps }) {
-  // Initialize Countly on component mount
+function App({ Component, pageProps }) {
   useEffect(() => {
-    // Initialize Countly
+    // Countly initialization
     Countly.init({
       app_key: 'a29b88fe47cb432798af0a4dc2e2c0946332696a',
-      url: 'https://svn-526c2451c3183.flex.countly.com/',
-      debug: true, // Optional, enables debug mode
+      url: 'https://svn-526c2451c3183.flex.countly.com',
+      debug: true, // Set to false in production
     });
 
-    // Start tracking sessions
-    Countly.begin_session();
-
-    // Track page views
+    // Track events or behaviors as needed
+    Countly.track_sessions();
     Countly.track_pageview();
-
-    // Clean up Countly instance on component unmount
-    return () => {
-      Countly.stop();
-    };
+    Countly.track_clicks();
+    Countly.track_scrolls();
+    Countly.track_errors();
+    Countly.track_links();
+    Countly.track_forms();
+    Countly.collect_from_forms();
   }, []);
 
-  return (
-    <>
-      <Analytics />
-      <Component {...pageProps} />
-    </>
-  );
+  return <Component {...pageProps} />;
 }
 
-export default MyApp;
+export default App;
