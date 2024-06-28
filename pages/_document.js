@@ -19,6 +19,25 @@ export default function Document() {
         <Main />
         <NextScript />
       </body>
+      <!--Countly script-->
+<script type='text/javascript' src='https://cdn.jsdelivr.net/npm/countly-sdk-web@latest/lib/countly.min.js'></script>
+<script type='text/javascript'>
+
+Countly.init({
+// provide your app key that you retrieved from Countly dashboard
+app_key: "a29b88fe47cb432798af0a4dc2e2c0946332696a",
+
+// Provide your server IP or name.
+// If you use your own server, make sure you have https enabled if you use
+// https below.  
+ url: "https://form.sh0von.me"
+
+});
+// track sessions automatically
+Countly.track_sessions();
+// track pageviews automatically
+Countly.track_pageview();
+</script>
     </Html>
   );
 }
