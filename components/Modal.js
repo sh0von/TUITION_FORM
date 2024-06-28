@@ -29,7 +29,7 @@ const Modal = ({ showModal, handleClose }) => {
     <ul className="list-disc list-inside text-gray-600 mb-6 space-y-2">
       <li><span className="font-bold">Step 1:</span> Enter your personal details.</li>
       <li><span className="font-bold">Step 2:</span> Provide student or tuition information.</li>
-      <li><span className="font-bold">Note:</span> You can also fillup for your past tuition. Fill a new form for each tuition.</li>
+      <li><span className="font-bold">Note:</span> You can also fill form for your past tuition. Fill a new form for each tuition.</li>
       <li><span className="font-bold">Privacy:</span> Data is confidential and won't be used commercially.</li>
       <li><span className="font-bold">Anonymous:</span> You can use a fake name to remain anonymous.</li>
     </ul>
